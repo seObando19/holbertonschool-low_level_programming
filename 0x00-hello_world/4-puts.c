@@ -1,11 +1,12 @@
 #include <stdio.h>
-#define size 51
+
 /*
- * Description: Using puts
+ * main - Entry point
+ *
+ *Return: Always 0
 */
 int main(void)
 {
-char cadena[size] = "Programming is like building a multilingual puzzle";
-puts(cadena);
+puts("\"Programming is like building a multilingual puzzle");
 return (0);
 }
