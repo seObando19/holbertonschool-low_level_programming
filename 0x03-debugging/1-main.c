@@ -9,13 +9,13 @@ int main(void)
 {
 	int i;
 
-	printf("don’t delete it!\n");
+	printf("Infinite loop incoming :(\n");
 
 	i = 0;
 
 	while (i < 10)
 	{
-		putchar(i);
+		putchar(i); /*don’t delete it!*/
 	}
 
 	printf("Infinite loop avoided! \\o/\n");
