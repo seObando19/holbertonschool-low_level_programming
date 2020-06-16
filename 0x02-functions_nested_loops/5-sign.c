@@ -3,7 +3,8 @@
 /**
   *print_sign - print option switch value of n
   *@n:the character to check
-  *Return: 1- n > 0 | 0- n == 0 | -1 n < 0
+  *
+  *Return: 1 if  n > 0; Return: 0 if n == 0; Return: if -1 n < 0
  */
 int print_sign(int n)
 {
