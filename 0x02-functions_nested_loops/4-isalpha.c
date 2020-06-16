@@ -3,19 +3,18 @@
 /**
   *_isalpha -Know if is lowercase or uppercase or letter
   *@c: The character to check
-  *Return: (1) if exits lowercase else (0)
+  *
+  *Return: (1) if c is an alphabet, else Return: (0)
  */
 int _isalpha(int c)
 {
 
-	if (c >= 'A' && c <= 'Z')
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 	{
 		return (1);
 	}
-	if (c >= 'a' && c <= 'z')
+	else
 	{
-		return (1);
+		return (0);
 	}
-	return (0);
-	
 }
