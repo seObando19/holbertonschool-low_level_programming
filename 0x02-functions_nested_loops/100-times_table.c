@@ -7,7 +7,7 @@
   */
 void print_times_table(int n)
 {
-	int b, c;
+	int b, c, res;
 
 	if (!(n > 15) || n < 0)
 	{
@@ -15,27 +15,29 @@ void print_times_table(int n)
 		{
 			for (c = 0; c <= n; c++)
 			{
-				if ((b * c) > 9 && (b * c) < 100)
+				res = b * c;
+				if (res < 10)
+					_putchar(res + '0');
+				else if (res >= 10 && res < 100)
 				{
-					_putchar(((b * c) / 10) + '0');
-					_putchar(((b * c) % 10) + '0');
-				}
-				else if ((b * c) >= 100)
-				{
-					_putchar(((b *  c) / 100) + '0');
-					_putchar(((b * c) / 10) % 10 + '0');
-					_putchar((b * c) % 10 + '0');
+					_putchar(res / 10 + '0');
+					_putchar(res % 10 + '0');
 				}
 				else
 				{
-					_putchar((b * c) + '0');
+					_putchar(res / 100 + '0');
+					_putchar((res / 10) % 10 + '0');
+					_putchar(res % 10 + '0');
 				}
 				if (c < n)
-					_putchar(','), _putchar(' ');
-				if (((c + 1) * b < 10))
-					_putchar(' '), _putchar(' ');
-				else if ((c + 1) * b >= 10 && (c + 1) * b < 100)
+				{
+					_putchar(',');
 					_putchar(' ');
+					if ((res + b) < 10)
+						_putchar(' '), _putchar(' ');
+					else if ((res + b) >= 10 && (res + b) < 100)
+						_putchar(' ');
+				}
 			}
 			_putchar('\n');
 		}
