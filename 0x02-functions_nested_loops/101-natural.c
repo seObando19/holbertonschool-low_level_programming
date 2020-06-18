@@ -7,28 +7,18 @@
  */
 int main(void)
 {
-	int n, a, i;
+	int n, acum;
 
 	n = 0;
-	i = 5;
-	a = 3;
+	acum = 0;
 	while (n < 1024)
 	{
-		if (i == a)
+		if ((n % 3 == 0) || (n % 5 == 0))
 		{
-			continue;
+			acum += n;
 		}
-		else if (a > i)
-		{
-			n = n + a;
-			a = a + 3;
-		}
-		else
-		{
-			n = n + i;
-			i = i + 5;
-		}
+		n++;
 	}
-	printf("%d\n", n);
+	printf("%d\n", acum);
 	return (0);
 }
