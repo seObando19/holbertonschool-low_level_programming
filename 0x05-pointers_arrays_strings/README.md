@@ -1,0 +1,1 @@
+inters, arrays and strings
