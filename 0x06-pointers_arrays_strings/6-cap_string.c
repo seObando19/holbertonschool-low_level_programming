@@ -19,15 +19,16 @@ char *cap_string(char *s)
 		{
 			band = 1;
 		}
-		if (s[i] > 96 && s[i] < 123 && band == 1)
+		else if ((s[i] >= 'a' && s[i] <= 'z' && band == 1)
+			|| (s[0] >= 'a' && s[0] <= 'z'))
 		{
 			s[i] -= 32;
 			band = 0;
 		}
-		else if (s[i] > 64 && s[i] < 91)
+		else
+		{
 			band = 0;
-		if (s[i] > 47 && s[i] < 58)
-			band = 0;
+		}
 		i++;
 	}
 	return (s);
