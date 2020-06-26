@@ -7,22 +7,17 @@
  */
 char *leet(char *s)
 {
-	int i = 0;
+	int i = 0, a;
+	char val[5] = {'4', '3', '0', '7', '1'};
+	char lower[5] = {'a', 'e', 'o', 't', 'l'};
+	char upper[5] = {'A', 'E', 'O', 'T', 'L'};
 
 	while (s[i] != '\0')
 	{
-		if (s[i] != '\0')
+		for (a = 0; a < 5; a++)
 		{
-			if (s[i] == 'a' || s[i] == 'A')
-				s[i] = 52;
-			else if (s[i] == 'e' || s[i] == 'E')
-				s[i] = 51;
-			else if (s[i] == 'o' || s[i] == 'O')
-				s[i] = 48;
-			else if (s[i] == 't' || s[i] == 'T')
-				s[i] = 55;
-			else if (s[i] == 'l' || s[i] == 'L')
-				s[i] = 49;
+			if ((s[i] == lower[a]) || (s[i] == upper[a]))
+				s[i] = val[a];
 		}
 		i++;
 	}
