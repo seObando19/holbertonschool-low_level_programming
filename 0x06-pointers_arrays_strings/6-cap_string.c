@@ -3,16 +3,22 @@
 /**
   * *cap_string - capitalizes all words of a string.
   *@s: pointer to check
-  *Return: s
+  *Return: n
  */
 char *cap_string(char *s)
 {
 	int i = 0, band = 0;
-
+	
 	while (s[i] != '\0')
 	{
-		if ((s[i] >= 32 && s[i] <= 64 && s[i] != 45) || (s[i] == '\t'))
-			band = 1;
+		if (s[i] == ',' || s[i] == ';' || s[i] == '.'
+		 || s[i] == '!' || s[i] == '?' || s[i] == '"' 
+		 || s[i] == '(' || s[i] == ')' || s[i] == '{'
+		 || s[i] == '}' || s[i] == ' ' || s[i] == '\n'
+		 || s[i] == '\t')
+		{
+			band = 1; 
+		}
 		if (s[i] > 96 && s[i] < 123 && band == 1)
 		{
 			s[i] -= 32;
@@ -23,6 +29,6 @@ char *cap_string(char *s)
 		if (s[i] > 47 && s[i] < 58)
 			band = 0;
 		i++;
-	}
+	} 	
 	return (s);
 }
