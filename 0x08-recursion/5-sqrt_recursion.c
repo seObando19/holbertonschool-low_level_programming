@@ -30,6 +30,7 @@ int root_square(int a, int b)
 int _sqrt_recursion(int n)
 {
 	int l = 0;
+
 	n = root_square(l + 1, n);
 	return (n);
 }
