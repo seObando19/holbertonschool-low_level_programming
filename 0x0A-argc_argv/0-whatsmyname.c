@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
   *main - prints its name, followed by a new line.
@@ -6,9 +7,11 @@
   *@argv: array of the params
   *Return: 0
 */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	while (argc--)
-		printf("%s\n", *argv++);
+	int i;
+
+	for (i = 0; i < argc; i++)
+		printf("%s\n", argv[i]);
 	return (0);
 }
