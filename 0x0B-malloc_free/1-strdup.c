@@ -16,6 +16,10 @@ char *_strdup(char *str)
 	{
 		return (0);
 	}
+	if (ac == NULL)
+	{
+		return (0);
+	}
 	while (str[i] != '\0')
 	{
 		ac[i] = str[i];
