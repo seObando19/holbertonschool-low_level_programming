@@ -25,15 +25,15 @@ char *_strdup(char *str)
 	unsigned int i, len = 0;
 	char *ac;
 
-	len = _arlen(str);
-	ac = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 	{
-		return (0);
+		return (NULL);
 	}
+	len = _arlen(str);
+	ac = malloc(sizeof(char) * (len + 1));
 	if (ac == NULL)
 	{
-		return (0);
+		return (NULL);
 	}
 	for (i = 0; i < len; i++)
 	{
