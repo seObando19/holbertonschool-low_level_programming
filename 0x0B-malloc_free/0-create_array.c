@@ -23,6 +23,6 @@ char *create_array(unsigned int size, char c)
 		{
 			ac[i] = c;
 		}
+		return (ac);
 	}
-	return (ac);
 }
