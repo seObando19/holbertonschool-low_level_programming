@@ -26,15 +26,18 @@ char *str_concat(char *s1, char *s2)
 	int i, x, len1 = 0, len2 = 0;
 	char *ar;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
 		s1 = "";
+	}
+	if (s2 == NULL)
+	{
 		s2 = "";
 	}
 	len1 = _stlen(s1);
 	len2 = _stlen(s2);
 	ar = malloc(sizeof(char) * (len1 + len2 + 1));
-	if (!ar)
+	if (ar == NULL)
 	{
 		return (NULL);
 	}
