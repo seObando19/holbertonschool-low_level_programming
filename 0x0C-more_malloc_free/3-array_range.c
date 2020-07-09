@@ -21,7 +21,7 @@ int *array_range(int min, int max)
 	{
 		return (NULL);
 	}
-	while (min < res)
+	while (min < max + 1)
 	{
 		ai[i] = min;
 		min++;
