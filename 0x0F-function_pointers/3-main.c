@@ -5,6 +5,7 @@
   *main -entry point
   *@argc: numbers of arguments passed
   *@argv: array of arguments of values
+  *Return: 0
 */
 int main(int argc, char **argv)
 {
