@@ -36,8 +36,8 @@ void print_all(const char * const format, ...)
 						printf("%c", ptr[a]);
 						a++;
 					}
+					break;
 				}
-				else
 					printf("(nil)");
 				break;
 		}
@@ -47,4 +47,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
+	va_end(list);
 }
