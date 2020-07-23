@@ -5,7 +5,7 @@ int len(const char *s)
 
 	while (s[i])
 		i++;
-	return(i);
+	return (i);
 }
 /**
   * *add_node -  adds a new node at the beginning
