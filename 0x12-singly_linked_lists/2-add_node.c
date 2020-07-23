@@ -1,4 +1,9 @@
 #include "lists.h"
+/**
+  *len - know lenght of a string
+  *@s: pointer of string
+  *Return: lenght of string
+*/
 int len(const char *s)
 {
 	int i = 0;
