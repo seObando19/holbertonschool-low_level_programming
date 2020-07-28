@@ -4,7 +4,7 @@
   *print_listint - prints all the elements
   * of a listint_t list.
   *@h:pointer of the list
-  *Return :number of the nodes
+  *Return: number of the nodes
 */
 size_t print_listint(const listint_t *h)
 {
@@ -13,9 +13,9 @@ size_t print_listint(const listint_t *h)
 	i = 0;
 	while (h)
 	{
-		if (h->n == 0)
+		if (h == NULL)
 		{
-			printf("NULL");
+			printf("(nill)\n");
 			i++;
 		}
 		else
