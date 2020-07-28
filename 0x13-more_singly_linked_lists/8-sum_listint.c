@@ -14,13 +14,12 @@ int sum_listint(listint_t *head)
 	if (!(head == NULL))
 	{
 		ptr = head;
-		while (head->next != NULL)
+		while (ptr != NULL)
 		{
-			ptr = ptr->next;
-			head = ptr;
 			cont += ptr->n;
+			ptr = ptr->next;
 		}
 		return (cont);
 	}
-	return (0);
+	return (cont);
 }
