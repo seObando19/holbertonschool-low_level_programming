@@ -9,21 +9,22 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int text;
-	int lenStr;
+	ssize_t len = 0;
 	char *buf;
 
 	if (!filename)
 		return (0);
 	text = open(filename, O_RDONLY);
-	if (text == -1)
+	if (len == -1)
 		return (0);
 	buf = malloc(sizeof(char) * letters);
 	if (!buf)
 		return (0);
-	lenStr = read(text, buf, letters);
-	if (write(STDOUT_FILENO, buf, lenStr) != lenStr)
+	len = read(text, buf, letters);
+	if (len == -1)
 		return (0);
+	len = write(STDOUT_FILENO, buf, len);
 	close(text);
 	free(buf);
-	return (lenStr);
+	return (len);
 }
