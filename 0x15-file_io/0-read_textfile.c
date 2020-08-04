@@ -1,19 +1,18 @@
 #include "holberton.h"
 
 /**
-  *read_textfile - reads a text file and prints
-  *it to the POSIX standard output.
-  *@filename:Pointer name of th file
+  *read_textfile - reads a text file and prints standard output.
+  *@filename: Pointer name of th file
   *@letters: number of letters it should read and print
   *Return: the actual number of letters
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int text;
-	char *buf;
 	int lenStr;
+	char *buf;
 
-	if (filename == NULL)
+	if (!filename)
 		return (0);
 	text = open(filename, O_RDONLY);
 	if (text == -1)
