@@ -10,8 +10,8 @@ size_t print_dlistint(const dlistint_t *h)
 {
 	size_t i = 0;
 
-	if (!h || h == NULL)
-		return (-1);
+	if (h == NULL)
+		return (EXIT_FAILURE);
 	while (h)
 	{
 		printf("%i\n", h->n);
