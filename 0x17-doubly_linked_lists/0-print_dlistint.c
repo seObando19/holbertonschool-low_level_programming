@@ -8,13 +8,13 @@
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-	int i = 0;
+	size_t i = 0;
 
 	if (h == NULL)
 		return (EXIT_FAILURE);
 	while (h)
 	{
-		printf("%i\n", h->n);
+		printf("%d\n", h->n);
 		h = h->next;
 		i++;
 	}
