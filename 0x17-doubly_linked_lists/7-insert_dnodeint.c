@@ -14,12 +14,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *creatNode, *tmp;
 	unsigned int pos = 0;
 
+	if (!h)
+		return (NULL);
 	if (idx > lenList(*h))
 		return (NULL);
 	if (idx == 0 || *h == NULL)
-		return (NULL);
+		return (addd_nodeint(h, n));
 	if (idx == lenList(*h))
-		return (add_dnodeint(h, n));
+		return (add_dnodeint_end(h, n));
 	creatNode = malloc(sizeof(dlistint_t));
 	if (creatNode == NULL)
 		return (NULL);
