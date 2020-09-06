@@ -11,28 +11,42 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *creatNode = malloc(sizeof(dlistint_t));
-	dlistint_t *tmp;
+	dlistint_t *creatNode, *tmp;
 	unsigned int pos = 0;
 
-	tmp = *h;
+	if (idx > lenList(*h))
+		return (NULL);
+	if (idx == 0 || *h == NULL)
+		return (NULL);
+	if (idx == lenList(*h))
+		return (add_dnodeint(h, n));
+	creatNode = malloc(sizeof(dlistint_t));
 	if (creatNode == NULL)
 		return (NULL);
-	creatNode->n = n;
-	if (idx == 0)
-	{
-		*h = creatNode;
-		creatNode->next = tmp;
-		return (creatNode);
-	}
-	while (pos < idx - 1)
-	{
-		if (tmp == NULL)
-			return (NULL);
+	tmp = *h;
+	while (pos++ < idx - 1)
 		tmp = tmp->next;
-		pos++;
-	}
+	tmp->next->prev = creatNode;
 	creatNode->next = tmp->next;
 	tmp->next = creatNode;
+	creatNode->n = n;
+	creatNode->prev = tmp;
 	return (creatNode);
+}
+
+/**
+ *lenList - function for know len of the list
+ *@h:Double pointer of the list
+ *Return: size of the list
+ */
+size_t lenList(const dlistint_t *h)
+{
+	size_t cont = 0;
+
+	while (h)
+	{
+		cont++;
+		h = h->next;
+	}
+	return (cont);
 }
