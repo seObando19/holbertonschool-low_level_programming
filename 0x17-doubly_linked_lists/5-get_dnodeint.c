@@ -15,7 +15,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	if (!(head == NULL) || !(index == 0))
 	{
 		findNode = head;
-		while (head)
+		while (head != NULL)
 		{
 			if (position == index)
 			{
