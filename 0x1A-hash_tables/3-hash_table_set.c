@@ -14,6 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!ht || !key || !(*key) || !value)
 		return (0);
+
 	idx = key_index((const unsigned char *)key, ht->size);
 
 	if (ht->array[idx] && !(equalElement(key, ht->array[idx], value)))
@@ -51,7 +52,7 @@ int equalElement(const char *key, hash_node_t *arry, const char *value)
 	{
 		if (!(strcmp(element->key, key)))
 		{
-			free(element);
+			free(element->value);
 			element->value = strdup(value);
 			return (0);
 		}
